@@ -12,10 +12,12 @@ def convert(rates, value, a_from, a_to):
     if a_from == a_to:
         return value
 
+    for list_from, list_to, list_rate in rates:
+        if list_from == a_from:
+            return round(value * list_rate, 2)
 
-    return [value * rates for a_from, a_to, rates in rates][0]
-
-
+        elif list_from == a_to:
+            return round(value / list_rate, 2)
 
 
 
@@ -23,7 +25,7 @@ def convert(rates, value, a_from, a_to):
 if __name__ == '__main__':
     rates = [("USD", "EUR", 0.74)]
     value = 1
-    a_from = 'USD'
-    a_to = 'EUR'
+    a_from = 'EUR'
+    a_to = 'USD'
 
     print(convert(rates, value, a_from, a_to))

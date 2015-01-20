@@ -16,3 +16,6 @@ def test_different_values():
     assert convert(rates, 10, a_from, a_to) == 7.4
     assert convert(rates, 50, a_from, a_to) == 37
     assert int(convert(rates, 1.5, a_from, a_to)) == 1
+
+def test_reverse_lookup():
+    assert convert([("EUR", "USD", 0.74)], value, a_from, a_to) == 1.35
