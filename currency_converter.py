@@ -11,3 +11,15 @@ def convert(rates, value, a_from, a_to):
 
     if a_from == a_to:
         return value
+
+
+    return [value * rates for a_from, a_to, rates in rates][0]
+
+
+if __name__ == '__main__':
+    rates = [("USD", "EUR", 0.74)]
+    value = 1
+    a_from = 'USD'
+    a_to = 'EUR'
+
+    print(convert(rates, value, a_from, a_to))
