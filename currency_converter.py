@@ -18,14 +18,10 @@ def convert(rates, value, a_from, a_to):
 
         elif list_from == a_to and list_to == a_from:
             return round(value / list_rate, 3)
-            
+
 
 if __name__ == '__main__':
-    new_rates = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)]
-    value = 1
-    USD_to_EUR = convert(new_rates, value, "USD", "EUR")
-    print(USD_to_EUR)
-    EUR_to_JPY = convert(new_rates, USD_to_EUR, 'EUR', 'JPY')
-    print(EUR_to_JPY)
-    JPY_to_USD = convert(new_rates, 108.002, 'JPY', 'USD')
-    print(JPY_to_USD)
+    new_rates = [("JPY", "EUR", .0069),
+                 ("EUR", "USD", 1.35)]
+
+    print(convert(new_rates, 1, "JPY", "EUR"))

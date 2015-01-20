@@ -21,12 +21,15 @@ def test_reverse_lookup():
     assert convert([("EUR", "USD", 0.74)], value, a_from, a_to) == 1.351
 
 def test_multiple_dif_rates():
-    new_rates = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)]
+    new_rates = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949),
+                 ("USD", "MXN", 14.64)]
 
     assert convert(new_rates, value, 'EUR', 'JPY') == 145.949
     assert convert(new_rates, value, "JPY", "EUR") == .007
+    assert convert(new_rates, value, "JPY", "EUR") == .007
+    assert convert(new_rates, 500, "MXN", "USD") == 34.153
 
-def xtest_values_into_new_rates():
+def BROKEN_test_values_into_new_rates():
     new_rates = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)]
 
     USD_to_EUR = convert(new_rates, value, "USD", "EUR")
