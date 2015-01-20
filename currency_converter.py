@@ -1,8 +1,13 @@
-def convert(rates, value, from, to):
+def convert(rates, value, a_from, a_to):
     """This function is designed to take in the below arguments and return
     the value in the specified currency.
-    rates = a list of rates
-    value = a number for which you'd like to exchange for
-    from = a string saying what currency it's in
-    to = a string saying what currency you'd like it in."""
-    
+
+    rates = a list of tupleswith each tuple containing a currency code
+            you can convert from, a currency code you can convert to,
+            and a rate
+    value = the amount of money you'd like to exchange for
+    from = the currency code in the form of a string
+    to = the currency code you'd like the value in. also a string"""
+
+    if a_from == a_to:
+        return value
